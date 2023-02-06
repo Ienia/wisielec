@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Wisielec</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+    <div id="container">
+        <a href="start.html"><h1>WISIELEC</h1></a>
+        <div id="zanikanie">
+        <div class="formularz" id="gorny">
+            <input type="text" id="slowo" placeholder="Podaj słowo...">
+            <input type="submit" id="slowo_submit" value="Potwierdź" onclick="zaladujhaslo()">    
+            <script>
+                var input = document.getElementById("slowo");
+                input.addEventListener("keypress", function(event) {
+                    if (event.key === "Enter") {
+                    event.preventDefault();
+                    document.getElementById("slowo_submit").click();
+                    }
+                }); 
+            </script>
+        </div>
+        </div>
+        <div id="grafika"><img src="grafika/wisielec0.png"></div>
+        <div id="haslo">_____________________</div>
+        <div id="zanikanie2">
+        <div class="formularz" id="dolny">
+            <input type="text" id="litera" placeholder="Podaj literę...">
+            <input type="submit" id="litera_submit" value="Potwierdź" onclick="pobierzlitere()"> 
+            <script>
+                var input = document.getElementById("litera");
+                input.addEventListener("keypress", function(event) {
+                    if (event.key === "Enter") {
+                    event.preventDefault();
+                    document.getElementById("litera_submit").click();
+                    }
+                }); 
+            </script>   
+            <input type="submit" id="klawiatura_przycisk" value="Pokaż klawiaturę" onclick="pokazklawiature()">
+        </div>
+        <div id="klawiatura"></div>
+        <div id="wpisywanie"></div>
+        <div id="literki"></div>
+        </div>
+        <div id="komentarz"></div>
+    </div>
+</body>
+</html>
